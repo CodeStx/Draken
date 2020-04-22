@@ -1,9 +1,30 @@
-composer.phar
-.gitignore
+*.cache
+*.phar
+*.zip
+
+/php.yml
+.php_cs
+.travis.yml
+
 phpunit.xml
-/vendor/
-.idea/
-.git/
+phpunit.functional.xml
+/tests
+
+make
+/config
+
+/vendor
+composer.lock
+
+/.idea/
+/.project/
+/.settings/
+/.vs/
+
+.gitattribute
+.gitignore
+# .gitkeep
+/.git/
 
 # Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
 # You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file

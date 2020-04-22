@@ -13,7 +13,7 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"Draken\\": "src/Draken/"
+			"CodeStx\\Draken\\": "src/Draken/"
 		}
 	},
     "require": {
@@ -24,10 +24,11 @@
 		"psr/log": "~1.0",
         "symfony/yaml": "^3.0"
     },
-	"minimum-stability": "dev",
+	"version": "v1.1.0-dev",
+	"minimum-stability": "stable",
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "1.1-dev"
         }
     }
 }
