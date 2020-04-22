@@ -44,8 +44,8 @@ class Request implements  RequestInterface
         $tr_httpreq = rtrim($tr_httpreq, "/");
         $this->_request = $tr_httpreq;
         $this->_params = explode("/", $tr_httpreq);
-        $this->_controller = $this->_params[0];
-        $this->_action     = $this->_params[1];
+        $this->_controller = (isset($this->_params[0]))? $this->_params[0] : "defCtrll";
+        $this->_action     = (isset($this->_params[1]))? $this->_params[1] : "defAct";
     }
 
     public function getAction() {
