@@ -3,7 +3,7 @@
 	"type": "library",
     "description": "The Draken PHP framework",
 	"keywords": ["framework"],
-	"homepage": "https://codestx.org/draken,
+	"homepage": "https://codestx.org/draken",
 	"license": "MIT",
 	"authors": [
 		{
