@@ -24,11 +24,9 @@
 		"psr/log": "~1.0",
         "symfony/yaml": "^3.0"
     },
-	"version": "v1.1.0-dev",
-	"minimum-stability": "stable",
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1-dev"
+            "dev-master": "1.0-dev"
         }
     }
 }
