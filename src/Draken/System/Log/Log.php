@@ -5,24 +5,24 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\AbstractLogger;
 use Psr\Log\LogLevel;
 
-class log extends AbstractLogger implements LoggerInterface
+class log
 {
     /**
      * @inheritDoc
      */
-    public function log(LogLevel $level, $message, $mixed = array())
+    public function log($level, $message, array $mixed = array())
     {
         $txt_node = $this->chlevel($level);
         $txt_msg = $txt_node . $message;
         Logger::log("$txt_msg");
     }
 
-    public function alert_log($message)
+    public function alert($message)
     {
         $this->log(LogLevel::ALERT, $message);
     }
 
-    private function chlevel(LogLevel $level) {
+    private function chlevel($level) {
         switch ($level){
             case LogLevel::EMERGENCY:
                 return (string) " [emergency]  ";
