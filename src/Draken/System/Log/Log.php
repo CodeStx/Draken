@@ -1,27 +1,10 @@
 <?php
 namespace Draken\System\Log;
 
-use Psr\Log\LoggerInterface;
-use Psr\Log\AbstractLogger;
 use Psr\Log\LogLevel;
 
-class log
+class Log
 {
-    /**
-     * @inheritDoc
-     */
-    public function log($level, $message, array $mixed = array())
-    {
-        $txt_node = $this->chlevel($level);
-        $txt_msg = $txt_node . $message;
-        Logger::log("$txt_msg");
-    }
-
-    public function alert($message)
-    {
-        $this->log(LogLevel::ALERT, $message);
-    }
-
     private function chlevel($level) {
         switch ($level){
             case LogLevel::EMERGENCY:
@@ -49,5 +32,53 @@ class log
                 return  (string) " [debug]  ";
                 break;
         }
+    }
+
+    private function _log($level, $message, array $mixed = array())
+    {
+        $txt_node = $this->chlevel($level);
+        $txt_msg = $txt_node . $message;
+        Logger::log("$txt_msg");
+    }
+
+
+    public function emergency($message)
+    {
+        $this->_log(LogLevel::EMERGENCY, $message);
+    }
+
+    public function alert($message)
+    {
+        $this->_log(LogLevel::ALERT, $message);
+    }
+
+    public function critical($message)
+    {
+        $this->_log(LogLevel::CRITICAL, $message);
+    }
+
+    public function error($message)
+    {
+        $this->_log(LogLevel::ERROR, $message);
+    }
+
+    public function warning($message)
+    {
+        $this->_log(LogLevel::WARNING, $message);
+    }
+
+    public function notice($message)
+    {
+        $this->_log(LogLevel::NOTICE, $message);
+    }
+
+    public function info($message)
+    {
+        $this->_log(LogLevel::INFO, $message);
+    }
+
+    public function debug($message)
+    {
+        $this->_log(LogLevel::DEBUG, $message);
     }
 }

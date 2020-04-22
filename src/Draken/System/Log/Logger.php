@@ -12,10 +12,10 @@ class Logger
      */
     public static function log(string $message, string $fileName = null) {
         $fileName = ($fileName===null)? date('Y-m-d').'-app_dev.log' : $fileName;
-        if (!file_exists($f_link = (APP_LINK . '/logs' . $fileName))) {
+        if (!file_exists($f_link = (APP_LINK . '/logs/' . $fileName))) {
             touch($f_link);
         }
-        $log_s = ' [ '.date('Y-m-d H:i:s'). ' ]    ' . Filter::utf8($message) . PHP_EOL;
+        $log_s = '['.date('H:i:s'). ']    ' . Filter::utf8($message) . PHP_EOL;
         file_put_contents($f_link, $log_s, FILE_APPEND);
     }
 
