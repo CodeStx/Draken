@@ -1,0 +1,33 @@
+{
+    "name": "codestx/draken",
+	"type": "library",
+    "description": "The Draken PHP framework",
+	"keywords": ["framework"],
+	"homepage": "https://codestx.org/draken,
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Bartosz Zwierzchowski",
+			"email": ""
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"": "src/"
+		}
+	},
+    "require": {
+        "php": "^7.2",
+		"ext-xml": "*",
+		"psr/cache": "~1.0",
+		"psr/container": "^1.0",
+		"psr/log": "~1.0",
+        "symfony/yaml": "^3.0"
+    },
+	"minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "5.1-dev"
+        }
+    }
+}
