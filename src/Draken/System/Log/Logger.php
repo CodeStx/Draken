@@ -27,7 +27,7 @@ class Logger
      */
     public static function load(string $file = null) {
         $fileName = (!$file===null)? $file.'.log': date('Y-m-d').'-app_dev.log';
-        if(!file_exists($f_link = (APP_LINK . '/logs' . $fileName))) {
+        if(!file_exists($f_link = (APP_LINK . '/logs/' . $fileName))) {
             return file_get_contents($f_link);
         }
         return null;
